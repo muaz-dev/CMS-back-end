@@ -17,6 +17,12 @@ app.use("/api", usersRoutes.routes);
 app.use("/api", tinyRoutes.routes);
 app.use("/api", quillRoutes.routes);
 
-app.listen(config.port, () =>
-  console.log("App is listening on url http://localhost:" + config.port)
+var port = process.env.PORT || 8080;
+
+app.listen(port, () =>
+  console.log("App is listening on url http://localhost:" + port)
 );
+
+// app.listen(config.port, () =>
+//   console.log("App is listening on url http://localhost:" + config.port)
+// );
